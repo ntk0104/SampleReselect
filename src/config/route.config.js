@@ -6,37 +6,39 @@
  * @flow
  */
 
-import React from 'react';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import React from 'react'
+import {
+  createStackNavigator,
+  createAppContainer,
+  createSwitchNavigator
+} from 'react-navigation'
 
 import HomeScreen from '../screens/Home'
-import SecondScreen from '../screens/Second'
-import ModalScreen from '../screens/Modal'
-import Main from '../screens/Main'
+import LoginScreen from '../screens/Login'
 
-
-const contentNavigator = createStackNavigator(
+const AppStack = createStackNavigator(
   {
-    Home: HomeScreen,
-    Second: SecondScreen,
-    Main: Main
+    // Home: {screen: HomeScreen, path: 'Home/'},
+    Home: HomeScreen
   },
   {
-    initialRouteName: "Main"
+    initialRouteName: 'Home',
+    headerMode: 'none'
   }
-);
+)
 
-const AppNavigator = createStackNavigator(
+const AppNavigator = createSwitchNavigator(
   {
-    content: contentNavigator,
-    modal: ModalScreen
+    Home: { screen: AppStack, path: 'Home/' },
+    Login: { screen: LoginScreen, path: '/' }
   },
   {
     headerMode: 'none',
-    initialRouteName: "content",
-    transparentCard: true, // make the background of the screen is transparent if it is not defined background color: (by default it will have backgroundColor = 'white')
-    mode: 'modal' // slide from the bottom to the top like as the animation of modal
+    initialRouteName: 'Login'
   }
-);
+)
 
-export default createAppContainer(AppNavigator);
+export default () => {
+  const AppContainer = createAppContainer(AppNavigator)
+  return <AppContainer />
+}

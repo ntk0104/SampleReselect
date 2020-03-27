@@ -114,7 +114,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.initialsampleproj"
+        applicationId "com.testairbussso"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'initialSampleProj' do
-  # Pods for initialSampleProj
+target 'TestAirBusSSO' do
+  # Pods for TestAirBusSSO
   pod 'React', :path => '../node_modules/react-native/'
   pod 'React-Core', :path => '../node_modules/react-native/React'
   pod 'React-DevSupport', :path => '../node_modules/react-native/React'
@@ -30,7 +30,7 @@ target 'initialSampleProj' do
 
   pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  target 'initialSampleProjTests' do
+  target 'TestAirBusSSOTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -38,10 +38,10 @@ target 'initialSampleProj' do
   use_native_modules!
 end
 
-target 'initialSampleProj-tvOS' do
-  # Pods for initialSampleProj-tvOS
+target 'TestAirBusSSO-tvOS' do
+  # Pods for TestAirBusSSO-tvOS
 
-  target 'initialSampleProj-tvOSTests' do
+  target 'TestAirBusSSO-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
